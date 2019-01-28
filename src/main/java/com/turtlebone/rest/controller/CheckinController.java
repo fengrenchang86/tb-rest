@@ -47,7 +47,8 @@ public class CheckinController {
 	public @ResponseBody ResponseEntity<?> checkin(@RequestBody CheckinRequest request) {
 		String username = request.getUsername();
 		String type = request.getType();
-		int rt = restCheckinService.checkin(type, username);
+		String remark = request.getRemark();
+		int rt = restCheckinService.checkin(type, username, remark);
 		return rt == 1 ? ResponseEntity.ok("OK") : ResponseEntity.ok("FAIL");
 	}
 }
