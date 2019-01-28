@@ -39,12 +39,12 @@ public class RestCheckinService {
 		return groupConfigService.deleteByPrimaryKey(id);
 	}
 	
-	public int checkin(String type, String username, String remark) {
+	public int checkin(String type, String username, String remark, String datetime) {
 		GroupType groupType = GroupType.findGroupType(type);
 		if (groupType == null) {
 			log.error("groupType[{}]不存在", type);
 			return 0;
 		}
-		return checkinService.checkin(groupType, username, remark);
+		return checkinService.checkin(groupType, username, remark, datetime);
 	}
 }

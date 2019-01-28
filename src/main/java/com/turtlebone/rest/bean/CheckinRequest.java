@@ -6,4 +6,6 @@ import lombok.Data;
 public class CheckinRequest extends BaseRequest {
 	protected String type;
 	protected String remark;
+	protected String date;
+	protected String time;
 }
