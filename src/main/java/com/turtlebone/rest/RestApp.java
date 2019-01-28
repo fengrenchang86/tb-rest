@@ -17,6 +17,6 @@ import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 @EnableDubboConfiguration
 public class RestApp {
 	public static void main(String[] args) {
-		SpringApplication.run(RestApp.class, args);
+		SpringApplication.run(RestApp.class);
 	}
 }
