@@ -46,9 +46,9 @@ spring:
   datasource:
     type: org.apache.commons.dbcp2.BasicDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://{MSYQL_HOST}:3306/turtle?allowMultiQueries=true
-    username: {MSYQL_USERNAME}
-    password: {MSYQL_PASSWORD}
+    url: jdbc:mysql://{MYSQL_HOST}:3306/turtle?allowMultiQueries=true
+    username: {MYSQL_USERNAME}
+    password: {MYSQL_PASSWORD}
     initialSize: 10
     minIdle: 5
     maxActive: 20
