@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.turtlebone.checkin.common.GroupType;
+import com.turtlebone.checkin.model.FavCheckinModel;
 import com.turtlebone.checkin.model.GroupConfigModel;
 import com.turtlebone.checkin.service.CheckinService;
 import com.turtlebone.checkin.service.GroupConfigService;
+import com.turtlebone.main.model.ActivityModel;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -45,6 +47,15 @@ public class RestCheckinService {
 			log.error("groupType[{}]不存在", type);
 			return 0;
 		}
+		if (groupType.getId() >= 0x20000001 && groupType.getId() <= 0x20000010) {
+			username = "FLJ";
+		}
 		return checkinService.checkin(groupType, username, remark, datetime);
+	}
+	public List<ActivityModel> queryCheckin(String username) {		
+		return checkinService.query(username);
+	}
+	public List<FavCheckinModel> queryFav(String username) {
+		return checkinService.queryFav(username);
 	}
 }
